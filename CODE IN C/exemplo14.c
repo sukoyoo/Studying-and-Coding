@@ -4,8 +4,10 @@
 int main() {
 
     char operador;
+    char continuar;
     int n1, n2, r;
 
+do {
     printf("Quer fazer conta de que? [+, -, *, /] ");
     scanf(" %c", &operador); // Adicionando um espaço antes de %c para evitar captura de \n
 
@@ -41,7 +43,15 @@ int main() {
         break;
     default:
         printf("Operador invalido!\n");
+        
     }
+
+     // Pergunta se quer continuar
+     printf("Deseja fazer outra operacao? (S/N): ");
+     scanf(" %c", &continuar);
+
+} while (continuar == 's' || continuar == 'S'); // Repete enquanto o usuário digitar 's' ou 'S'
+    printf("FINALIZANDO...");
 
     return 0;
 }
